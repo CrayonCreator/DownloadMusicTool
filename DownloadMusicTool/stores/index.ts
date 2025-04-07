@@ -20,16 +20,16 @@ export const useStore = defineStore("main", {
         currentSongId: "",
         currentSongName: "",
         currentSongUrl: "",
-        currentSongArtist: "",
+        currentSongArtists: "",
         currentSongDuration: 0,
         currentSongLyric: [] as Array<{ time: number; text: string }>,
         currentSoundSource: "",
         SongItem: [] as Array<
             {
-                id: string;
                 name: string;
+                id: string;
                 url: string;
-                artist: Array <string>;
+                artists: Array <string>;
                 duration: number;
                 lyric?: Array<{ time: number; text: string }>;
             }
@@ -41,7 +41,7 @@ export const useStore = defineStore("main", {
         getCurrentSongId: (state) => state.currentSongId,
         getCurrentSongName: (state) => state.currentSongName,
         getCurrentSongUrl: (state) => state.currentSongUrl,
-        getCurrentSongArtist: (state) => state.currentSongArtist,
+        getCurrentSongArtists: (state) => state.currentSongArtists,
         getCurrentSoundSource: (state) => state.currentSoundSource,
         getCurrentSongLyricIndex: (state) => state.currentSongLyricIndex,
         getCurrentSongLyricTime: (state) => state.currentSongLyricTime,
@@ -142,10 +142,10 @@ export const useStore = defineStore("main", {
         },
         // 获取歌曲url
         // 减少一下网络请求次数
-        async getNetEaseSongUrl(id: Array<string>) {
+        async getNetEaseSongUrl(id:string) {
             const response = await NetEaseAPI.get("/song/url/v1", {
                 params: {
-                    id: id.join(","),
+                    id: id,
                     level: "jymaster",
                 },
             });
