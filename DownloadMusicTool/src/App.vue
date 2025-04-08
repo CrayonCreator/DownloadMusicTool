@@ -2,7 +2,7 @@
     <div id="App">
         <Header />
         <Search />
-        <Player />
+        <Player class="Player" />
     </div>
 </template>
 
@@ -67,6 +67,11 @@ html, body {
                 0 25px 50px rgba(0, 0, 0, 0.15),
                 0 10px 20px rgba(0, 0, 0, 0.08),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+        }
+
+        .Player{
+            position: fixed;
+            bottom: 0;
         }
     }
 

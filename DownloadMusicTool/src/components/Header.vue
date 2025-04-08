@@ -64,7 +64,6 @@ const changeSource = (source: string) => {
     margin: 20px 0 15px;
     padding: 0 10px;
     position: relative;
-    z-index: 10;
 }
 
 .SourceOption {
